@@ -79,7 +79,6 @@ def player_stats(player_name)
       end
     end
   end
-
  end
 
 
@@ -115,10 +114,9 @@ end
 
 
  def winning_team
-
    top_team = {}
-  game_hash.values.each do |team_info|
-    team_points = 0
+    game_hash.values.each do |team_info|
+      team_points = 0
     team_info[:players].each do |player|
       team_points += player[:points]
     end
@@ -141,17 +139,14 @@ end
 
 
  def long_name_steals_a_ton?
-
   longest = {}
   game_hash.values.each do |team_info|
     team_info[:players].each do |player|
       longest[player[:player_name]] = player[:steals]
     end
   end
-
  max_steals = longest.values.max
 longest[longest.key(max_steals)] == max_steals
-
  end
 
 
