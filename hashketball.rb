@@ -123,6 +123,44 @@ def num_points_scored(player_name)
 find_player(player_name)[:points]
 end
 
+def find_player(player_name)
+  home_players = game_hash[:home][:players]
+  away_players = game_hash[:away][:players]
+  
+  all_players = home_players.merge(away_players) #combines hash
+  
+  all_players[player_name]
+  
+  
+end
+
+def winning_team
+  home_players_points = game_hash[:home][:players][:points]
+  away_players_points = game_hash[:away][:players][:points]
+  
+  if home_players_points.sum > away_players_points.sum
+    return game_hash[:home]
+  elsif home_players_points.sum = away_players_points.sum
+    return "A tie"
+  else
+    return game_hash[:away]
+  end
+end
+
+winning_team
+
+def winning_team
+  points = Hash.new(0) #creates a new hash with a default value of 10
+  team = ""
+  game_hash.keys.each do |team|
+    game_hash[team][:players].each do |player, stats|
+      points[team] += stats[:points]
+    end
+  end
+  game_hash[points.keys.max][:team_name]
+end
+  
+  
 
 
 def good_practices
