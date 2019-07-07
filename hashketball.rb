@@ -3,10 +3,7 @@ def game_hash
 
   game_hash = {
 
-
      :home => {
-
-
      :team_name => 'Brooklyn Nets',
     :colors => ['black', 'white'],
     :players => [
@@ -18,14 +15,7 @@ def game_hash
       ]
     },
 
-
-
-
-
-
    :away => {
-
-
      :team_name => 'Charlotte Hornets',
     :colors => ['turquoise', 'purple'],
     :players => [
@@ -39,18 +29,15 @@ def game_hash
 end
 
  def num_points_scored(player_name)
-
    game_hash.values.each do |team|  
     team[:players].each do |player|
       return player[:points] if player.has_value?(player_name)
     end
-  end
-
+   end
  end
 
 
  def shoe_size(player_name)
-
    game_hash.values.each do |team_info|  
     team_info[:players].each do |player|
       return player[:shoe] if player.has_value?(player_name)
@@ -60,7 +47,6 @@ end
  end
 
  def team_colors(team)
-
    game_hash.values.each do |team_info|
     if team_info.has_value?(team)
       return team_info[:colors].map(&:capitalize)
@@ -74,15 +60,12 @@ end
  end
 
  def player_numbers(team)
-
    game_hash.values.each do |team_info|
     if team_info.has_value?(team)
       return team_info[:players].map { |player| player[:number]}
     end
   end
 end
-
-
 
 
  def player_stats(player_name)
@@ -96,7 +79,6 @@ end
 
 
  def big_shoe_rebounds
-
    biggest_shoe = 0
   player_rebounds = 0
   game_hash.values.each do |team_info|
