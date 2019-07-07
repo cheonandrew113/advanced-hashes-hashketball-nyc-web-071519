@@ -2,8 +2,8 @@
 require "pry"
 
 def game_hash
-  game_hash = {
-    
+  {
+   home: {}
     
   }
   top_level_keys = { :home => "", :away => "" },
