@@ -84,16 +84,15 @@ end
 end
 
 
- def player_stats(player_name)
 
-   game_hash.values.each do |team_info|
-    team_info[:players].each do |player|
-      if player.has_value?(player_name)
-         player.delete(:player_name) 
-         return player
-      end
-    end
-  end
+
+ def player_stats(player_name)
+   game_hash.keys.each do |team|
+     if game_hash[team][:players].keys.includes?(player_name)
+       return game_hash[team][:players][player_name]
+     end
+   end
+ end
 
  end
 
