@@ -150,7 +150,7 @@ end
 winning_team
 
 def winning_team
-  points = Hash.new(0) #creates a new hash with a default value of 10
+  points = Hash.new(0)
   team = ""
   game_hash.keys.each do |team|
     game_hash[team][:players].each do |player, stats|
